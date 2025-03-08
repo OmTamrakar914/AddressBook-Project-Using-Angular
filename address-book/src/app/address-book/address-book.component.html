@@ -1,0 +1,50 @@
+<div class="logo-container">
+  <div class="logo">
+<img src="https://th.bing.com/th/id/OIP.GjhTZ114rn5njGVeHS2u_AHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Logo"> 
+  </div>
+  <div>
+    <div class="logo-text">ADDRESS  </div>
+    <div class="logo-text1">BOOK  </div>
+  </div>
+ 
+</div>
+
+<div class="container">
+  <div class="header">
+    <h1>Person Details</h1>
+    <button (click)="addPerson()">+ Add Person</button>
+
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Fullname</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Phone Number</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people; let i = index">
+        <td>{{ person.fullname }}</td>
+        <td>{{ person.address }}</td>
+        <td>{{ person.city }}</td>
+        <td>{{ person.state }}</td>
+        <td>{{ person.zipCode }}</td>
+        <td>{{ person.phoneNumber }}</td>
+        <td class="actions">
+          <button class="delete" (click)="deletePerson(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button class="edit" (click)="editPerson(i)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
